@@ -22,7 +22,18 @@ function App() {
     return `${day} ${date} ${month} ${year}`
   }
 
- 
+  // Calling API to get result
+  const search = evt => {
+    if (evt.key === "Enter") {
+      fetch(`${api.base}weather?q=${query}&appid=${api.key}&units=metric`)
+       .then(res => res.json())
+       .then(result => {
+         setWeather(result);
+         setQuery('');
+         console.log(result);
+       });
+    }
+  }
 
   return (
     <div className="App">

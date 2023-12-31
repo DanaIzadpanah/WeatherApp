@@ -42,6 +42,7 @@ function App() {
     return `${day} ${date} ${month} ${year}`
   }
 
+  // 
   return (
     <div className={(typeof weather.main != "undefined") ? ((weather.main.temp > 16) ? 'app warm' : 'app') : 'app'}>
       <main>
@@ -57,11 +58,12 @@ function App() {
             onKeyPress={search}
           />
         </div>
-
-
+    
+        
+         
         {(typeof weather.main != "undefined") ? (
 
-          
+
         <div>
           <div className="location-box">
             <div className="location">{weather.name}, {weather.sys.country}</div>
